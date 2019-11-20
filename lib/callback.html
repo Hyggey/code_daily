@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let x = function(){
+        //     console.log(111)
+        // }
+        // let y = function(callback){
+        //     console.log(222);
+        //     callback()
+        // }
+        // y(x)
+
+        // let z = function(a,b){
+        //     return a+b;
+        // }
+        // console.log(z(1,2))
+
+        // let f = function(c,d){
+        //     console.log(c,d)
+        // }
+        // f(1,2)
+        function a(){
+            console.log(111);
+            setTimeout(() =>{
+                console.log('定时器')
+            })
+        }
+        function b(){
+            console.log(222)
+        }
+        function c(){
+            console.log(333)
+        }
+        a()
+        b()
+        c()
+
+        // var friends = ["Mike", "Stacy", "Andy", "Rick"];
+        // friends.forEach(function (eachName, index){
+        //     console.log(index + 1 + ". " + eachName); // 1. Mike, 2. Stacy, 3. Andy, 4. Rick
+        // });
+        new Promise((resolve,reject) =>{
+            console.log(111)
+        })
+    </script>
+</body>
+</html>

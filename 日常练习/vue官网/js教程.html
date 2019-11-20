@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js教程</title>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <button onclick="document.getElementById('demo').innerHTML = Date()">点击显示日期</button>
+    <p id="demo"></p>
+    <button onclick="myFunction()">点击</button>
+    <script>
+        function myFunction(){
+            document.getElementById('demo').innerHTML = 'nihao';
+        }
+        console.log(typeof null)
+    </script>
+    <script>
+        function calculate(x1,x2){
+            return x1*x2
+        }
+        console.log(calculate(5,2))
+    </script>
+
+        <p id="dem"></p>
+
+        <script>
+        // 创建对象：
+        var person = {
+            firstName: "Bill",
+            lastName : "Gates",
+            id       :  12345
+        };
+
+        // 显示对象中的数据：
+        document.getElementById("dem").innerHTML =
+        person["firstName"] + " " + person["lastName"];
+        </script>
+
+        <script>
+            var person = {
+                age: 100,
+                name:'张三',
+                math:function(){
+                    return 1+2
+                }
+            }
+            // alert(person.age + person["name"])
+            // alert(person.math())
+        </script>
+
+        <script>
+            var str = "nihao";
+            console.log(str.indexOf('i'))
+        </script>
+
+        <script>
+            var str = "a,b,c,d,e,f";
+            console.log(str)
+            // console.log(str.split(""))
+            console.log(str.split(" "))
+            console.log(str.split(","))
+            var txt = "hello";
+            // console.log(txt.split(""));
+            console.log(txt.split(" "));
+            console.log(txt.split(","));
+        </script>
+
+        <h1>
+            <span>包不包括呢？</span>
+        </h1>
+        <script>
+            console.log($('h1').html())
+        </script>
+
+        <script>
+            var person = [];
+            person["firstName"] = "John";
+            person["lastName"] = "Doe";
+            person["age"] = 46; 
+            console.log(person)
+        </script>
+
+        <script>
+            var arr = [1,5,9,3,11]
+            arr.forEach(item =>{
+                console.log(item)
+            })
+            arr.sort(function(a,b){
+                return a-b
+            })
+            console.log(arr)
+            arr2 = arr.map(function(a){   //方法不会更改原始数组
+                return a*2
+            })
+            console.log(arr2)
+        </script>
+
+        <script>
+            const bc = new BroadcastChannel('AlienZHOU');
+            bc.onmessage = function(e) {
+                console.log(e.data)
+            }
+        </script>
+        <script>
+            console.log(Math.random())
+        </script>
+        <script>
+            var arr = [1,2,3]
+            var str = arr.toString();
+            var str2 = str.split(',')
+            console.log(str2)
+        </script>
+        <script>
+            var patt = /e/;
+            patt.test("The best things in life are free!");
+            console.log(patt.test("The best things in life are free!"))
+        </script>
+        <script>
+            // 创建对象：
+            var person = {
+                firstName: "Bill",
+                lastName : "Gates",
+                id     : 678,
+                fullName : function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+            console.log(person.fullName())
+        </script>
+        <script>
+            console.log(this)
+        </script>
+        <script>
+            function myFunction() {
+                var carName = "porsche";   // 函数作用域
+            }
+            function myFunction() {
+                let carName = "porsche";   // 函数作用域
+            }
+        </script>
+        <p id="demo100"></p>
+
+        <p>打开调试器后，下面的代码应该在执行第三行之前停止执行。</p>
+        
+        <script>
+        var x = 15 * 10;
+        // debugger;
+        document.getElementById("demo100").innerHTML = x;
+        console.log(x)
+        </script>
+        <script>
+            var a = 0.1;
+            var b = 0.2;
+            var c = a + b;
+            console.log(c)
+        </script>
+        <script>
+            var obj = {"name":"Bill", "age":62, "city":"Seatle"};
+            console.log(obj,111)
+            var myJSON = JSON.stringify(obj);
+            console.log(myJSON,111)
+            '{"name":"Bill", "age":62, "city":"Seatle"}'
+            console.log(JSON.parse('{"name":"Bill", "age":62, "city":"Seatle"}'))
+        </script>
+        <script>
+            var dog = {
+                name:'小狗',
+                age:13,
+                sex:'男',
+                fullAge:function(){
+                    return 100
+                }
+            }
+            var b = Object.keys(dog)
+            console.log(b)
+        </script>
+        <form action="/demo/action_page.php" method="post">
+            <input type="text" name="fname" required>
+            <input type="submit" value="提交">
+        </form>
+        <script>
+            (function () {
+                console.log('111')     //我会调用我自己
+            })();
+            const abc = (x,y) => x*y;
+            console.log(abc(5,5))
+        </script>
+        <script>
+            var a = 123;
+            var b = 234;
+            var c = a;
+            a = b;
+            b = c;
+            console.log(a,b)
+        </script>
+        <script>
+            "use strict";
+            console.log(Number(false))
+            b = 'a' > 'b';
+            console.log(b)
+        </script>
+        <script>
+           console.log(false && 2)
+           console.log(0 || false) 
+        </script>
+        <script>
+            // var score = parseInt(window.prompt('请输入'));
+            var a = [1,3,5]
+            for(var i = 0,len = a.length;i<len;i++){
+                console.log(a[i])
+            }
+            
+            for(var i = 1;i;){
+                i++;
+                console.log('a')
+                if(i == 11){
+                    i = 0
+                }
+            }
+            var i = 10;
+            for(;i--;){
+                console.log(i + '')
+            }
+        </script>
+        <script>
+            // var n = parseInt(window.prompt('请输入'))
+            // var n1 = 2 ** n;
+            // document.write(n1);
+
+            // var n2 = parseInt(window.prompt('请输入'));
+            // var count = 1;
+            // for(var i = 1;i<=n2;i++){
+            //     count *= i;
+            // }
+            // console.log(count)
+
+            // var n3 = window.prompt('请输入');
+            // var n4 = n3.split('');
+            // console.log(n4);
+            // var n5 = '';
+            // for(var i = n4.length-1;i>=0;i--){
+            //     console.log(n4[i]);
+            //     n5 += n4[i]
+            // } 
+            // console.log(n5)      
+        </script>
+        <script>
+            // var c = parseInt(window.prompt('请输入'));
+            // var d = parseInt(window.prompt('请输入'));
+            // var e = parseInt(window.prompt('请输入'));
+            // if(c>d){
+            //     if(c>e){
+            //         console.log(c)
+            //     }else{
+            //         console.log(e)
+            //     }
+            // }else{
+            //     if(d>e){
+            //         console.log(d)
+            //     }else{
+            //         console.log(e)
+            //     }
+            // }
+        </script>
+        <script>
+            // var count = 0;
+            // for(var i = 2;i<100;i++){
+            //     for(var j = 0;j<=i;j++){
+            //         if(i%j == 0){
+            //             count ++;
+            //         }
+            //     }
+            //     if(count == 2){
+            //         console.log(i)
+            //     }
+            //     count = 0;
+            // }
+        </script>
+        <script>
+            switch(0){
+                case 0: console.log(111); break;
+                case 1: console.log(222)
+            }
+        </script>
+        <script>
+            const app = new Vue({
+                data:{
+                    
+                },
+                methods:{
+
+                }
+            }).$mount('#app')
+        </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="number" v-model.number="sum" @input="oninput"><br />
+        <!-- <span> {{typeof age }} </span> -->
+    </div>
+    <script>
+        var app = new Vue({
+            data:{
+                sum:''
+            },
+            methods: {
+                oninput(e) {
+                    var that = this
+                    // 通过正则过滤小数点后两位
+                    e.target.value = (e.target.value.match(/^\d*(\.?\d{0,2})/g)[0]) || null
+                    that.sum = e.target.value;
+                    console.log('e', e.target.value)
+                },
+            },
+        }).$mount('#app')
+    </script>
+</body>
+</html>

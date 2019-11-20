@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./lib/vue-2.4.0.js"></script>
+<body>
+    <div id="app">
+        <div ref="node">{{message}}</div>
+    </div>
+    <script>
+        var app = new Vue({
+            data:{
+                message:'nihao'
+            },
+            created() {
+                console.log(this.$refs.node)
+            },
+            mounted() {
+                console.log(this.$refs.node)
+            },
+        }).$mount('#app')    
+    </script>
+</body>
+</html>

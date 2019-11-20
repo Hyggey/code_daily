@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <!-- <div id="app">
+        {{message}}
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data: {
+                message:'nihao'
+            },
+        }) 
+    </script>-->
+        <!-- <div id="app">
+            <span :title="message">悬停几秒</span>
+        </div>
+        <script>
+            var app = new Vue({
+                el:'#app',
+                data:{
+                    message:'页面加载于' + new Date().toLocaleString()
+                }
+            })
+        </script> -->
+        <!-- <div id="app">
+            <p>{{message}}</p>
+            <button @click="reverse">反转消息</button>
+        </div>
+        <script>
+            var app = new Vue({
+                el:'#app',
+                data:{
+                    message:'Hello Vue.js!'
+                },
+                methods: {
+                    reverse(){
+                        this.message = this.message.split('').reverse().join('')
+                    }
+                },
+            })
+        </script> -->
+        <div id="app">
+            <p>{{message}}</p>
+            <input type="" v-model="message">
+        </div>
+        <script>
+            var app = new Vue({
+                el:'#app',
+                data:{
+                    message:''
+                }
+            })
+        </script>
+</body>
+</html>

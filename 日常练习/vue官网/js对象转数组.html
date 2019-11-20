@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {'未完成':5, '已完成':8, '待确认':4, '已取消':6};
+        var arr = [];
+        for(let i in obj){
+            arr.push(obj[i]);
+        }
+        console.log(arr,1111111111)
+        
+        var arr2 = [];
+        for(let i in obj){
+            let o = {};
+            o[i] = obj[i];
+            arr2.push(o)
+        }
+        console.log(arr2)
+    </script>
+</body>
+</html>

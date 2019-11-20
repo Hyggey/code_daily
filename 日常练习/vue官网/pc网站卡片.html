@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .art_museum{
+            width: 208px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        .art_museum:hover{
+            transform: scale(1.05)
+        }
+        .art_museum h4{
+            text-align: center;
+        }
+        .art_museum .img{
+            background: url('./lib/大海.jpg') center no-repeat;
+            width: 208px;
+            height: 136px;
+        }
+        .art_museum .price{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .art_museum .price span:last-child{
+            color: #e43a3d;
+            font-size: 25px;
+        }
+        .art_museum button{
+            margin: 8px auto 14px;
+            display: block;
+            border: 0;
+            outline: none;
+            background: #fff;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            width: 100px;
+            height: 30px;
+            box-shadow: 10px;
+            box-shadow: 5px 5px 10px #ccc;
+            cursor: pointer;
+        }
+        .art_museum button:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="art_museum">
+        <h4>张桢艺术馆</h4>
+        <div class="img"></div>
+        <span class="price">张桢《测试1》</span>
+        <div class="price">
+            <span>当前价</span>
+            <span>￥1000</span>
+        </div>
+        <button>立即购买</button>
+    </div>
+</body>
+</html>

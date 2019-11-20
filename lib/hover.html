@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../日常练习/jquery-3.4.1.min.js"></script>
+    <style>
+        .share{
+            margin-top: 100px;
+            display: flex;
+        }
+        .share>div img {
+            vertical-align: middle;
+            transform: translateY(-2px);
+        }
+        .share>div {
+            position: relative;
+        }
+        
+.share>div .friend_code {
+    width: 160px;
+    height: 160px;
+    border: 1px solid #e1e1e1;
+    position: absolute;
+    background: #fff;
+    /* right: 0; */
+    top: -66px;
+    z-index: 99;
+    left: 29px;
+}
+.share>div .friend_code span {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+}
+.share>div .friend_code .white {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 68px;
+    /* right: 45px; */
+    left: -7px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    transform: rotate(316deg);
+    border-bottom: transparent;
+    border-right: transparent;
+}
+.share>div .friend_code img {
+    width: 140px;
+    height: 130px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 11px;
+}
+.share .bbb{
+    width: 50%;
+}
+    </style>
+</head>
+<body>
+        <div class="share">
+            <span>分享至:</span>
+            <div class="bbb">
+                <!-- <a href="#"><img src="/home/image/news/space.png" alt=""></a> -->
+                <a href="#"><img src="./friend.png" alt=""></a>
+                <div class="friend_code" style="display: none;">
+                    <img src="./11111.png">
+                    <span>微信扫一扫</span>
+                    <div class="white"></div>
+                </div>
+            </div>
+        </div>
+    <script>
+        $('.share .bbb').mouseover(function (){
+				$('.share .friend_code').css('display','block')
+			})
+			$('.share .bbb').mouseout(function (){
+				$('.share .friend_code').css('display','none')
+			})
+    </script>
+</body>
+</html>

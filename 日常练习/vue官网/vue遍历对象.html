@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            <div v-for="(item,index,name) in message">
+                {{item}}---{{index}}---{{name}}
+            </div>
+        </p>
+    </div>
+    <script>
+        const message = {
+            id:1,
+            title:'你好',
+            content:'记得拉国家的老古董大浪街道啊',
+            time:'2019-07-24'
+        }
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message
+            }
+        })
+    </script>
+</body>
+</html>

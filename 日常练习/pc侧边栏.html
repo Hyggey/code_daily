@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: #f2f2f2;
+        }
+        .content-left{
+            width: 237px;
+            height: 700px;
+            float: left;
+            background: #ffffff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            box-sizing: border-box;
+        }
+        .content-left .content-item-top{
+            display: flex;
+            align-items: center;
+        }
+        .ul_common{
+            margin: 0;
+            padding: 0;
+            padding-left: 30px;
+        }
+        .ul_common .li_common{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 35px;
+            user-select: none;
+        }
+        .li_common .msg_flex{
+            display: flex;
+            align-items: center;
+        }
+        .li_common .msg_flex span:last-child{
+            background: #ee4433;
+            max-width: 70px;
+            border-radius: 10px;
+            color: #ffffff;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-left: 5px;
+            padding: 1px 8px;
+            display: inline-block;
+            font-size: 12px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-left">
+        <div class="content">
+            <div class="content-item">
+                <div class="content-item-top" style="height: 35px">
+                    <img src="" alt="">
+                    <span>账号设置</span>
+                </div>
+                <ul class="ul_common">
+                    <li class="li_common">
+                        <div>会员首页</div>
+                        <div>></div>
+                    </li>
+                    <li class="li_common">
+                        <div>个人资料</div>
+                        <div>></div>
+                    </li>
+                    <li class="li_common">
+                        <div>账户安全</div>
+                        <div>></div>
+                    </li>
+                    <li class="li_common">
+                        <div>收获地址</div>
+                        <div>></div>
+                    </li>
+                    <li class="li_common">
+                        <div class="msg_flex">
+                            <span>我的消息</span>
+                            <span>19999条未读</span>
+                        </div>
+                        <div>></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-item">
+                    <div class="content-item-top" style="height: 35px">
+                        <img src="" alt="">
+                        <span>交易中心</span>
+                    </div>
+                    <ul class="ul_common">
+                        <li class="li_common">
+                            <div>买到的作品</div>
+                            <div>></div>
+                        </li>
+                        <li class="li_common">
+                            <div>我的收藏室</div>
+                            <div>></div>
+                        </li>
+                        <li class="li_common">
+                            <div>我的建议</div>
+                            <div>></div>
+                        </li>
+                        <li class="li_common">
+                            <div class="msg_flex">
+                                <span>我的消息</span>
+                                <span>19999条未读</span>
+                            </div>
+                            <div>></div>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

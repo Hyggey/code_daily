@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/swiper.min-3.4.2.css">
+    <script src="./lib/swiper.min-3.4.2.js"></script>
+    <style>
+        .swiper-slide{
+            width: 300px;
+        }
+        .swiper-slide img{
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle-swiper02">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./lib/image/jingdong2.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // autoplay: true,//可选选项，自动滑动
+            speed:2000,
+            // slidesPerView: 1,//一行显示1个
+            slidesPerColumn: 3,//显示3行
+            // slidesPerColumnFill : 'column',
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                clickable:true
+            },  
+            // 如果需要前进后退按钮
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            pagination: '.swiper-pagination',
+       
+        })
+    </script>
+</body>
+</html>

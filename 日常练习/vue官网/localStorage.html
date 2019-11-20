@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        input{
+            height: 40px;
+            width: 150px;
+            background: cyan;
+            color: black;
+            outline: none;
+            border: 0;
+            border-radius: 5px;
+        }
+        input:active{
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="button" value="localstorage" @click="setLocal">
+    </div>
+    <script>
+        var app = new Vue({
+            data:{
+                message:'localStorage',
+                num:5,
+                data:{
+                    a:'123',
+                    b:'456',
+                    c:[1,2],
+                    d:undefined,
+                    e:null
+                }
+            },
+            methods: {
+                setLocal(){
+                    sessionStorage.setItem('setImg',JSON.stringify(this.data));
+                    let clock = window.setInterval(() =>{
+                        console.log(this.num);
+                        this.num--;
+                        a = JSON.parse(sessionStorage.getItem('setImg'));
+                        console.log(a)
+                        if(this.num < 0){
+                            sessionStorage.clear();
+                            window.clearInterval(clock)
+                        }
+                   },1000)
+                }, 
+            },
+        }).$mount('#app')
+    </script>
+</body>
+</html>

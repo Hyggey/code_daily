@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue官网/lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <script>
+        // 获取当前时间的毫秒数
+        console.log(new Date().getTime());
+        var timestamp = parseInt(new Date().getTime()/1000);    // 当前时间戳
+        document.write(timestamp);    
+    </script>
+    <!-- 瀑布流 -->
+    <div id="app">
+        <div>
+            <div v-for="(v,k) in newList[0]">
+                <img :src="v.img" alt="">
+            </div>
+            <div v-for='(v,k) in newList[1]'>
+                <img :src="v.img" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new  Vue({
+            data:{
+                newList:[],
+                photoList:[]
+            },
+            methods: {
+                dealData(){
+                    let arr = JSON.parse(JSON.stringify(this.photoList));
+                    var newArr = [];
+                    var leftArr = [];
+                    var rightArr = [];
+                    for(var i = 0,len=arr.lenght;i<len.lenght;i++){
+                        if(i % 2 == 0){
+                            leftArr.push(arr[i])
+                        }else {
+                            rightArr.push(arr[i])
+                        }
+                    }
+                    newArr = [leftArr,rightArr]
+                    this.newList = newArr
+                }
+            },
+        }).$mount('#app')
+    </script>
+</body>
+</html>

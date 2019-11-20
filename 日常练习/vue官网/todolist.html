@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .done{
+            text-decoration: line-through;
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{todos.filter(item => !item.done).length}} of {{todos.length}} remaing</p>
+        <p v-for="(item,index) in todos">
+            <input type="checkbox" v-model="item.done">
+            <span :class="{done:item.done}">{{ item.title }}</span>
+            <input type="button" value="*" @click="deleted(index)">
+        </p>
+        <input type="text" v-model="todoText"><button @click="add">add</button>
+    </div>
+    <script>
+        const todos = [
+            {
+                id:1,
+                title:'吃饭',
+                done:true
+            },
+            {
+                id:2,
+                title:'睡觉',
+                done:false
+            },
+            {
+                id:3,
+                title:'打代码',
+                done:true
+            }
+        ]
+        var app = new Vue({
+            el:'#app',
+            data:{
+                todos,
+                todoText:''
+            },
+            methods: {
+                add(){
+                    const todoText = this.todoText.trim();
+                    if(!todoText.length){
+                        return
+                    }
+                    const todo = this.todos;
+                    todo.push({
+                        id:todos[todos.length-1].id+1,
+                        title:todoText,
+                        done:false
+                    })
+                    this.todoText = ''
+                },
+                deleted(index){
+                    this.todos.splice(index,1)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

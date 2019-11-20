@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <input type="file">
+    <script>
+        // 监听用户上传图片的动作事件
+        $('input[type=file]').change(function(){
+            console.log($(this));
+            var dom = $(this);
+            var file = $(this[0]);
+            console.log(file);
+            // 找到用户的这张图片
+            var files = $(this)[0].files[0];
+            console.log(files)
+
+            // 将图片转化为base64
+            var reader = new FileReader();
+            var readers = reader.readAsDataURL(files);
+            console.log(readers)
+            reader.onload = function(e){
+                console.log(e)
+                console.log(this.result)              //与下面一句结果相同
+                console.log(e.currentTarget.result)  //打印的就是图片的base64编码
+            }
+
+            var formData = new FormData();
+                formData.append('123',files);   //123名字可以随意取
+                console.log(formData.get('123'))
+                console.log(formData.get('123') === files)  //true
+                console.log(formData)   
+        })
+    </script>
+</body>
+</html>

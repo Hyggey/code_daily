@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .disabled{
+             background-color: #ddd;
+             border-color: #ddd;
+             color:#57a3f3;
+             cursor: not-allowed;   /* 鼠标变化 */
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="1" @click="add" ref="input">
+    <button :class="{disabled: !this.stopClick}" >{{content}}</button>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            content:'发送验证码',
+            totalTime:5,
+            stopClick:true
+        },
+        methods:{
+            cutTime(){
+                var a = !this.stopClick;
+                console.log(a);
+                if (a) return;
+                this.stopClick = false;
+                this.content = this.totalTime + 's后重新发送';
+                let clock = setInterval(() =>{
+                    this.totalTime--;
+                    this.content = this.totalTime + 's后重新发送';
+                    if (this.totalTime<0){
+                        window.clearInterval(clock);
+                        this.content = '重新发送验证码';
+                        this.totalTime = 5;
+                        this.stopClick = true
+                    }
+                },1000)
+            },
+            add(){
+                if(this.$refs.input.value = 1){
+                    //console.log('success')
+                    this.cutTime()
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

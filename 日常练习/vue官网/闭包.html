@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+<body>
+    <script>
+        // function init() {
+        //     var name = "Mozilla"; // name 是一个被 init 创建的局部变量
+        //     function displayName() { // displayName() 是内部函数,一个闭包
+        //         alert(name); // 使用了父函数中声明的变量
+        //     }
+        //     displayName();
+        // }
+        // init();
+        
+        // function makeFunc() {
+        //     var name = "zhangsan";
+        //     function displayName() {
+        //         alert(name);
+        //     }
+        //     return displayName;
+        // }
+        // var myFunc = makeFunc();
+        // console.log(makeFunc())
+        // myFunc();
+
+        // console.log(typeof name)
+
+        function makeAdder(x) {
+            return function(y) {
+                return x + y;
+            };
+        }
+
+        var add5 = makeAdder(5);
+        var add10 = makeAdder(10);
+
+        console.log(add5(2));  // 7
+        console.log(add10(2)); // 12
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小轮播图</title>
+    <link rel="stylesheet" href="./lib/swiper.css">
+    <script type="text/javascript" src="./lib/swiper.js"></script>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .swiper-slide{
+            width: 120px;
+            height: 160px;
+        }
+        .img-box{
+            height: 120px;
+            width: 100%;
+            background-size: cover!important;
+            background-position: center!important;
+            background-repeat: no-repeat!important;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item,index) in list" :key="index">
+                    <div class="show-img-box" :class="list.length>1?'show-img-scale':''">
+                        <div class="img-box" :style="{'background':'url('+item.img+')'}"></div>
+                        <p>{{item.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const app = new Vue({
+            data:{
+                list:[
+                    {
+                        img:'http://pic33.nipic.com/20131007/13639685_123501617185_2.jpg',
+                        title:'第一作品'
+                    },
+                    {
+                        img:'http://pic32.nipic.com/20130813/3347542_160503703000_2.jpg',
+                        title:'第二作品'
+                    },
+                    {
+                        img:'http://pic27.nipic.com/20130222/10741105_154139938000_2.jpg',
+                        title:'第三作品'
+                    },
+                    {
+                        img:'http://b-ssl.duitang.com/uploads/item/201703/30/20170330153834_K3uHf.jpeg',
+                        title:'第四作品'
+                    }
+                ]
+            },
+            mounted() {
+                var mySwiper = new Swiper('.swiper-container',{
+                    observer:true, // 子集变化自动刷新
+                    slidesPerView : 'auto', // 窗口显示个数
+                    spaceBetween:20, // 间距
+                })
+            },
+            methods: {
+                
+            },
+        }).$mount('#app')
+    </script>
+</body>
+</html>

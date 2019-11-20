@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>随机背景色表格</title>
+    <style type="text/css">
+        table{
+            text-align: center; 
+        }
+        td{
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <table border="1px solid #ccc" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>21</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>31</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>41</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>51</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>61</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>71</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>81</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>91</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        function rndColor(){
+            var r = parseInt(Math.random()*256);
+            var g = parseInt(Math.random()*256);
+            var b = parseInt(Math.random()*256);
+            return "rgb("+r+","+g+","+b+")"
+        }
+        console.log(rndColor())  
+        var tds = document.getElementsByTagName('td');
+        for(var i = 0,td; td = tds[i++];){
+            td.onmouseover = function(){
+                this.style.background = rndColor(); 
+            }
+//          td.onmouseout = function(){
+//              this.style.background = '#fff';   
+//          };
+        }
+</script>
+</body>
+</html>
+

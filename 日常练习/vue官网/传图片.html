@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .pic_box{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            border-radius: 5px;
+            /* overflow: hidden; */
+        }
+        .pic_box div{
+            width: 100%;
+            height: 100%;
+            background-size: cover!important;
+            border: 1px solid #cccccc;
+        }
+        .pic_box .cha{
+            cursor: pointer;
+        }
+        .pic_box .img{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+        }
+        input[type="file"]{
+            display: none;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            background: #e43a3d;
+            color: #fff;
+            border: 0;
+            outline: none;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="pic_box">
+            <div v-for="(v,k) in file" :key="k">
+                <div  :style="{'background':'url('+v+') center no-repeat'}" v-if="file.length>0">
+                    <span class="cha" @click="del(k)">*</span>
+                </div>
+            </div>
+            
+            <div class="img" @click="add">
+                <span>+</span>
+                <span>上传图片</span>
+            </div>
+        </div>
+        <button @click="goPic">上传照片</button>
+        <input type="file" accept="img/*" multiple="multiple"  ref="img" @change="getImg">
+    </div>
+    <script>
+        var app = new Vue({
+            data:{
+                file:[],  // base64
+                files:[],  // file文件
+                blob:[],    //blob文件
+            },
+            created() {
+                console.log(this.file.length);
+            },
+            methods: {
+                add(){
+                    this.$refs.img.click()
+                },
+                getImg(e){      // 这里才是input按钮的change事件，做了验证
+                    var _this= this;
+                    console.log(e);
+                    // var files_list = e.target.files;
+                    var files_list = this.$refs.img.files
+                    console.log(files_list.length)
+                    for(let i = 0,len=files_list.length;i<len;i++){
+                        if(!/.(jpeg|png|gif|jpg)$/.test(files_list[i].name) ){ //限制图片格式
+                            alert('图片格式不正确')
+                            return
+                        }
+                        if(files_list[i].size> 5*1024*1024){ //限制图片大小5M
+                            alert('图片大小超过5M限制')
+                            return
+                        }
+                        this.uploadimg(files_list[i])
+                    }
+                    this.$refs.img.value = ''   // 上传完一张图片后，清空value
+                    // 不用按钮，直接上传就触发
+                    var obj = {
+                        base64:this.file,
+                        files:this.files,
+                        blob:this.blob
+                    }
+                    console.log(obj)
+
+                },
+                uploadimg(files){                   // 这里是将图片转化成base64
+                    var _this= this;
+                    // console.log(e);
+                    // var files = e.target.files[0]
+                    if (!files || !window.FileReader) return; // 看支持不支持FileReader
+                    if(files){
+                        let reader = new FileReader();
+                        reader.readAsDataURL(files);
+                        reader.onloadend= function(){
+                            _this.file.push(this.result);
+                            let files = _this.dataURLtoFile(this.result,"555");
+                            _this.files.push(files);
+                            let blob = _this.dataURLtoBlob(this.result);
+                            _this.blob.push(blob)
+
+                        }
+                    }
+                    console.log(_this.file)
+                },
+                del(k){
+                    this.file.splice(k,1)
+                },
+                 //将base64转换为文件
+                dataURLtoFile(dataurl, filename) {
+                    var arr = dataurl.split(','),
+                        mime = arr[0].match(/:(.*?);/)[1],
+                        bstr = atob(arr[1]),
+                        n = bstr.length,
+                        u8arr = new Uint8Array(n);
+                    while (n--) {
+                        u8arr[n] = bstr.charCodeAt(n);
+                    }
+                    return new File([u8arr], filename, { type: mime });
+                },
+                // 将base64转换为blob
+                 dataURLtoBlob(dataurl) {
+                    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                    while (n--) {
+                        u8arr[n] = bstr.charCodeAt(n);
+                    }
+                    return new Blob([u8arr], { type: mime });
+                },
+                // 验证
+                // 去上传
+                goPic(){
+                    obj = {
+                        base64:this.file,
+                        files:this.files,
+                        blob:this.blob
+                    }
+                    console.log(obj)
+                }
+            },   
+        }).$mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>步骤条二</title>
+    <style>
+        .step-box{
+            width: 875px;
+            position: relative;
+        }
+        .step-box .deliver{
+            border: 2px solid #e43a3d;
+            position: absolute;
+            width: calc(100% - 80px);
+            top: 24px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        .step-box-single{
+            display: flex;
+            justify-content: space-around;
+        }
+        .step-item {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            width: 120px;
+        }
+        .step-item .round.active{
+            background: #e43a3d;
+            color: #ffffff;
+        }
+        .step-item .round{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #e43a3d;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #e43a3d;
+            background: #ffffff;
+            z-index: 0;   /*方式一*/
+            position: relative;  /*方式二*/
+        }
+        .step-item div:nth-child(2){
+            padding: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="step-box">
+        <div class="deliver"></div>
+        <div class="step-box-single">
+            <div class="step-item">
+                <div class="round active">1</div>
+                <div>买家已下单</div>
+                <div style="font-size: 12px">2019-8-31 21:31:30</div>
+            </div>
+            <div class="step-item">
+                <div class="round">2</div>
+                <div>买家已下单</div>
+                <!-- <div style="font-size: 12px">2019-8-31 21:31:30</div> -->
+            </div>
+            <div class="step-item">
+                <div class="round">3</div>
+                <div>买家已下单</div>
+            </div>
+            <div class="step-item">
+                <div class="round">4</div>
+                <div>买家已下单</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

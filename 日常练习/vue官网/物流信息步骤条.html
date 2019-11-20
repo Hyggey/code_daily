@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .step_box{
+            width: 875px;
+            position: relative;
+        }
+        .step_box .deliver{
+            border: 2px solid #e43a3d;
+            position: absolute;
+            width: calc(100% - 80px);
+            top: 24px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        .single_step_box{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .single_step_box .single_step{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            margin: 0 45px;
+        }
+        .single_step_box .single_step.active .round{
+            background: #e43a3d;
+            color: #ffffff;
+        }
+        .single_step_box .single_step.active div:nth-child(2){
+            color: #e43a3d;
+        }
+        .single_step_box .single_step .round{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #e43a3d;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: red;
+            position: relative;
+            background: #ffffff;
+            z-index: 0;
+        }
+        .single_step_box .single_step div:nth-child(2){
+            padding: 8px 0 ;
+        }
+    </style>
+</head>
+<body>
+   <div class="step_box">
+       <!-- 线 -->
+       <div class="deliver"></div>
+       <div class="single_step_box">
+            <div class="single_step active">
+                <!-- 圆 -->
+                <div class="round">1</div>
+                <div>买家已下单</div>
+                <div style="font-size: 12px">2019-04-11 21:44:33</div>
+            </div>
+            <div class="single_step">
+                <div class="round">2</div>
+                <div>买家已下单</div>
+                <!-- <div style="font-size: 12px">2019-04-11 21:44:33</div> -->
+            </div>
+            <div class="single_step">
+                <div class="round">3</div>
+                <div>买家已下单</div>
+                <!-- <div>2019-04-11 21:44:33</div> -->
+            </div>
+            <div class="single_step">
+                <div class="round">4</div>
+                <div>买家已下单</div>
+                <!-- <div>2019-04-11 21:44:33</div> -->
+            </div>
+       </div>
+   </div>
+</body>
+</html>

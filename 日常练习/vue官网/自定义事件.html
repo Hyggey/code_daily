@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <base-checkbox v-model="lovingVue" @change="newchange"></base-checkbox>
+    </div>
+    <script>
+        Vue.component('base-checkbox', {
+            model: {
+                prop: 'checked',
+                event: 'change'
+            },
+            props: {
+                checked: Boolean
+            },
+            template: `<input type="checkbox" v-bind:checked="checked" v-on:change="$emit('change', $event.target.checked)">`
+            })
+        var app = new Vue({
+            data:{
+                lovingVue:'',
+                message:123
+            },
+            methods: {
+                newchange(e){
+                    console.log(e)
+                }
+            },
+        }).$mount('#app')
+    </script>
+</body>
+</html>

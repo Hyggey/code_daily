@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var listData = [
+                {
+                    id:'1',
+                    bigName:'大狗',
+                    goodsList:[
+                        {
+                            id:'1',
+                            name:'小狗1',
+                            price: 10,
+                            count: 5
+                        },
+                        {
+                            id:'2',
+                            name:'小狗2',
+                            price: 10,
+                            count: 5
+                        }
+                    ]
+                },
+                {
+                    id:'2',
+                    bigName:'大牛',
+                    goodsList:[
+                        {
+                            id:'1',
+                            name:'小牛1',
+                            price: 10,
+                            count: 5 
+                        },
+                        {
+                            id:'2',
+                            name:'小牛2',
+                            price: 10,
+                            count: 5 
+                        },
+                        {
+                            id:'3',
+                            name:'小牛3',
+                            price: 10,
+                            count: 5 
+                        }
+                    ]
+                }
+        ]
+
+        let child = [];
+        for(let i = 0,len = listData.length;i<len;i++){
+            // console.log(listData[i].goodsList)
+            child = child.concat(listData[i].goodsList)
+        }
+        console.log(child);
+        
+        var total = 0;
+        for(let j = 0,len2=child.length;j<len2;j++){
+            total += child[j].price * child[j].count;
+        }
+        console.log(total)
+    </script>
+</body>
+</html>

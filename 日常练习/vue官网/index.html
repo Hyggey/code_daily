@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <!-- <a href="./other.html" target="_blank">主页面</a> -->
+    <button onclick="send()">发送消息</button>
+</body>
+</html>
+<script>
+    var bc = new BroadcastChannel('AlienZHOU');
+    console.log(bc)
+    
+    bc.onmessage = function (e) {
+        console.log(e.data)
+        const data = e.data;
+        const text = '[receive] ' + data.msg + ' —— tab ' + data.from;
+        console.log('[BroadcastChannel] receive message:', text);
+    };
+
+    function send(){ 
+        console.log(2323)
+        bc.postMessage({type:1,content:'发送给你'});
+    }
+</script>

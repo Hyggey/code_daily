@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = [];
+        for(var i =0;i<10;i++){
+            a[i] = function(){
+                console.log(i)
+            }
+        }    
+        a[2]()
+
+        console.log(foo);
+        var foo = 2
+
+        // console.log(bar);
+        // let bar = 3         //会报错
+        // 解构赋值
+        let [e,f,g] = [1,2,3]
+        console.log(e,f,g)
+        // 模板字符串
+        var h = "名字", j = 123;
+        console.log(`this is good ${h} + ${j}`)
+    </script>
+</body>
+</html>
