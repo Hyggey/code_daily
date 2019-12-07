@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calc</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .first{
+        width: 100%;
+        display: flex;
+        margin-bottom: 50px;
+        font-size: 24px;
+        color: #fff;
+        height: 100px;
+    }
+    .calc{
+        background: #e43a3d;
+        width: calc(100% - 150px);
+        text-align: center;
+        line-height: 100px;
+    }
+    .first-right{
+        width: 150px;
+        background: #000000;
+        line-height: 100px;
+        text-align: center;
+    }
+    .second{
+        width: 100%;
+        display: flex;
+        font-size: 24px;
+        color: #fff;
+        height: 100px;
+    }
+    .second-left{
+        width: 300px;
+        background: cadetblue;
+        text-align: center;
+        line-height: 100px;
+    }
+    .second-right{
+        background: #e55441;
+        line-height: 100px;
+        flex: 1;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="first">
+        <div class="calc">calc属性</div>
+        <div class="first-right">右边剩余</div>
+    </div>
+    
+    <div class="second">
+        <div class="second-left">左边剩余</div>
+        <div class="second-right">flex</div>
+    </div>
+</body>
+</html>
