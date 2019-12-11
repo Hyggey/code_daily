@@ -1,0 +1,65 @@
+.chatContainer .scroll_chat .head_photo{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin: 0 22px;
+}
+
+.chatContainer .scroll_chat{
+    width: 1000px;
+    height: 300px;
+    border: 1px solid #000000;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.chatContainer .scroll_chat .my_message{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chatContainer .message_box{
+    max-width: 800px;
+    padding: 8px;
+    background: #CBD8F2;
+    border-radius: 5px;
+    position: relative
+}
+
+.chatContainer .my_message .message_box .line{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -7px;
+    transform: rotate(45deg);
+    background: #CBD8F2;
+}
+
+/* 对面 */
+.chatContainer .object_message .message_box .line{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -7px;
+    transform: rotate(45deg);
+    background: #CBD8F2;
+}
+
+.chatContainer .scroll_chat .object_message{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar{
+    width: 8px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-track{
+    background: #EDEDED;
+}
