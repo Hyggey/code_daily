@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>skr</title>
+    <script src="../日常练习/jquery-3.4.1.min.js"></script>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" onclick="rotate(45)"></div>
+    <script>
+        function rotate(a){
+            $('.box1').css('transform',`rotate(${a}deg)`)
+        }
+        var b = 0;
+        // setInterval(() =>{
+        //     b+=10;
+        //     console.log(b)
+        //     setInterval(() =>{
+        //         rotate(b)
+        //     },1000)
+        // },1000)
+        
+    </script>
+</body>
+</html>
