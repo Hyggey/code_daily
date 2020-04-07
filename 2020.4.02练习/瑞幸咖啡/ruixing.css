@@ -1,0 +1,68 @@
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    margin: 0;
+}
+/* 头部标题栏 */
+.main .fix_head .logo{
+    display: flex;
+    align-items: center;
+}
+.main .fix_head .logo img{
+    width: 160px;
+    height: 47px;
+}
+.main .fix_head .head_box{
+    max-width: 1040px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.main .fix_head .head_box ul{
+    display: flex;
+    align-items: center;
+    width: 720px;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.main .fix_head .head_box ul li a{
+    text-decoration: none;
+    color: #333;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+.main .fix_head .head_box ul li:last-child a{
+    background: url('./tel.gif') no-repeat center;
+    width: 30px;
+    height: 30px;
+}
+.main .fix_head .head_box ul li .active{
+    border-bottom: 2px solid #172991;
+    font-weight: 600;
+    color: #172991;
+}
+
+/* 中间banner图 */
+.main .banner{
+    position: relative;
+    min-width: 1040px;
+    overflow: hidden;  /*在屏幕宽度大于1040时，该属性生效，也就是滚动进度条没了 */
+    width: 100%;
+    height: 300px;
+}
+.main .banner .banner_img{
+    background: url('./banner02.png');
+    width: 1920px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* margin-left: -960px; */
+    transform: translateX(-50%);
+}
