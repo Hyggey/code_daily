@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>luckin coffee</title>
     <link rel="stylesheet" href="ruixing.css">
+    <script src="./jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -90,9 +91,31 @@
                         luckin coffee面向职场和年轻一代消费者，鼓励他们充满自信，突破以往，勇于改变。
                     </p>
                     <h3>改变，才能改变</h3>
+                    <div class="video_box">
+                        <video id="videoplay" width="600">
+                            <source type="video/mp4" src="https://s2.luckincoffeecdn.com/luckywebrm/images/index/luckincoffee_TVC31.mp4">
+                        </video>
+                        <a id="play" href="javascript:;"></a>
+                    </div>
+                    <p class="text descript" style="text-align: center;">△ 点击视频，观看汤唯的广告大片</p>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    var video = $('#videoplay')
+    $('#play').on('click',function(){
+        //注意：这个不行，控制css的video标签时，必须获取的是video标签的dom元素
+        // $('#videoplay').paly() 
+        if(video[0].paused){
+            video[0].play()
+            $('#play').hide()
+        }
+        video[0].onended = function(){
+            $('#play').show()
+        }
+           
+    })
+</script>
 </html>
