@@ -176,3 +176,32 @@ body{
     left: 0;
     top: 0;
 }
+
+/* 底部区域 */
+.main #footer{
+    background: #131616;
+    height: 300px;
+    font-size: 13px;
+    color: rgba(102,102,102,.6);
+    text-align: center;
+}
+.main .foot_logo{
+    background-image: url('./img/sub_logo@2x.png');
+    width: 1040px;
+    height: 90px;
+    background-repeat: no-repeat;
+    background-size: auto 34px;
+    border-bottom: 1px solid #262626;
+    background-position: center;
+    margin: 0 auto 60px;
+}
+.main .first_msg{
+    margin-bottom: 20px;
+}
+.main .first_msg p{
+    display: inline-block;
+}
+.main .first_msg p:last-child img{
+    vertical-align: bottom;
+    margin: 0 3px 0 25px;
+}
