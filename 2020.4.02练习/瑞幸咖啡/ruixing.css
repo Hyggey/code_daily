@@ -1,4 +1,4 @@
-ul,li{
+ul,li,p{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -38,7 +38,7 @@ body{
     display: block;
 }
 .main .fix_head .head_box ul li:last-child a{
-    background: url('./tel.gif') no-repeat center;
+    background: url('./img/tel.gif') no-repeat center;
     width: 30px;
     height: 30px;
 }
@@ -57,7 +57,7 @@ body{
     height: 300px;
 }
 .main .banner .banner_img{
-    background: url('./banner02.png');
+    background: url('./img/banner02.png');
     width: 1920px;
     height: 300px;
     position: absolute;
@@ -65,4 +65,65 @@ body{
     left: 50%;
     /* margin-left: -960px; */
     transform: translateX(-50%);
+}
+/* content内容 */
+.main .content .slide_left ul li a{
+    text-decoration: none;
+    color: #999;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    position: relative;
+    padding-left: 96px;
+}
+.main .content .slide_left{
+    width: 224px;
+}
+.main .content .slide_left ul li a::before{
+    content: "";
+    /* background: url('./img/litter_img/invest.png'); */
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: 45px;
+    top: 11px;
+}
+.main .content .slide_left ul li:nth-child(1) a::before{
+    background: url('./img/litter_img/brand01.png');
+}
+.main .content .slide_left ul li:nth-child(2) a::before{
+    background: url('./img/litter_img/invest.png');
+}
+.main .content .slide_left ul li:nth-child(3) a::before{
+    background: url('./img/litter_img/contact01.png');
+}
+.main .content .slide_left ul li:nth-child(4) a::before{
+    background: url('./img/litter_img/statement.png');
+}
+.main .content .slide_left ul li:nth-child(5) a::before{
+    background: url('./img/litter_img/joinus.png');
+}
+.main .content .slide_left .employ{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main .content .slide_left .employ p{
+    font-size: 13px;
+}
+.main .content .slide_left .employ p:nth-of-type(1){
+    color: #999;
+    margin-bottom: 8px;
+}
+.main .content .slide_left .employ p:nth-of-type(2){
+    color: #172991;
+}
+.main .content .slide_left .employ img{
+    width: 131px;
+    height: 131px;
+    /* padding: 10px; */
+    border: 12px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
