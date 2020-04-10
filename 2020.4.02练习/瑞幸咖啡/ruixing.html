@@ -19,12 +19,19 @@
                     <ul>
                         <li><a href="">首页</a></li>
                         <li><a href="" class="active">关于我们</a></li>
-                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="" style="width: 119px;">Investor Relations</a></li>
                         <li><a href="">无人零售</a></li>
                         <li><a href="">小鹿茶</a></li>
                         <li><a href="">最新活动</a></li>
                         <li><a href="">企业用户</a></li>
-                        <li><a href=""></a></li>
+                        <li class="advise">
+                            <a href=""></a>
+                            <div class="advise_box" style="display: none;">
+                                <h2>进场合作热线 4000-100-100</h2>
+                                <p>为大型企业、中高端写字楼提供专业咖啡配套。欢迎各类咖啡厅转让。</p>
+                            </div>
+                            <div class="square" style="display: none;"></div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -120,6 +127,7 @@
     </div>
 </body>
 <script>
+    // 播放音频事件
     var video = $('#videoplay')
     $('#play').on('click',function(){
         //注意：这个不行，控制css的video标签时，必须获取的是video标签的dom元素
@@ -131,7 +139,22 @@
         video[0].onended = function(){
             $('#play').show()
         }
-           
+    })
+    // 移动进入标题加下划线事件
+    $('.fix_head li a').mouseover(function(){
+        $(this).not($('.fix_head li:last-child a')).addClass('active')
+    })
+    $('.fix_head li a').mouseout(function(){
+        $(this).not($('.fix_head li:eq(1) a')).removeClass('active')
+    })
+    // 移动到电话hover事件
+    $('.advise').mouseover(function(){
+        $('.advise_box').css('display','block')
+        $('.square').css('display','block')
+    })
+    $('.advise').mouseout(function(){
+        $('.advise_box').css('display','none')
+        $('.square').css('display','none')
     })
 </script>
 </html>
