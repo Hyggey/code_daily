@@ -1,0 +1,73 @@
+<!--pages/category/category.wxml-->
+<view class="category_box">
+	<van-tree-select main-item-class="leftBar" 
+	content-item-class="rightBar" 
+	items="{{ items }}" 
+	main-active-index="{{ mainActiveIndex }}"
+	active-id="{{ activeId }}" 
+	bind:click-nav="onClickLeft" 
+	bind:click-item="onClickItem" 
+	class="treeSelect"
+	main-active-class="active_item">
+		<view slot="content">
+			<view wx:if="{{mainActiveIndex == index}}" wx:for="{{items}}" wx:key="index" class="tab">
+				<!-- refresher-enabled
+				refresher-triggered="{{triggered}}"
+				bindrefresherrefresh="onRefresh" -->
+				<scroll-view scroll-y="true" class="scroll-view" 
+				bindscrolltolower="lower" 
+				scroll-top='{{topNum}}'
+				>
+					<van-tabs color="#60CCB5" active="{{ active }}" bind:change="onChangeTop">
+						<van-tab title="{{itemName.name}}" wx:for="{{item.children}}" wx:for-index="idx" name="{{itemName.id}}"
+						 wx:for-item="itemName" wx:key="idx">
+							<!-- 单个标签商品页面 -->
+							<view class="goodPage" wx:if="{{active == idx}}" wx:for="{{goodsData}}" wx:key="index">
+								<!-- <view class="goodBox"> -->
+								<text wx:if="{{item.type_name}}" class="name">{{item.type_name}}</text>
+								<view wx:if="{{item.id}}" class="goodContainer">
+									<view class="goodItem" bindtap="toGoods" data-id="{{item.id}}">
+										<van-image width="150rpx" height="150rpx" fit="cover" lazy-load src="{{imageUrl}}/image/{{item.images[0].image}}" />
+										<view class="good_right">
+											<view class="desc">
+												<text>{{item.name}}</text>
+												<text>{{item.desc}}</text>
+											</view>
+											<view class="cartPrice">
+												<view class="price">
+													<!-- 促销或团购 -->
+													<block wx:if="{{item.is_group == 1}}">
+														<text class="red">￥{{item.group.price}}</text>
+													</block>
+													<block wx:if="{{item.is_sale == 2}}">
+														<text class="red">￥{{item.price_sale}}</text>
+													</block>
+													<!-- 原价 -->
+													<block wx:if="{{item.is_group == 0 && item.is_sale != 2}}">
+														<text class="red">￥{{item.price}}</text>
+													</block>
+													<!-- 画横线的原价格 -->
+													<block wx:if="{{item.is_sale == 2}}">
+														<text class="old">￥{{item.price}}</text>
+													</block>
+													<!-- 促销价格 -->
+													<!-- <text wx:if="{{item.is_group == 1 || item.is_sale == 0}}" class="red">￥{{item.price}}</text>
+												  <text wx:if="{{item.is_sale == 2}}" class="old">￥{{item.price_sale}}</text> -->
+												</view>
+												<view class="icon" catchtap="addCart" data-id="{{item.id}}">
+													<van-icon color="white" name="shopping-cart-o" />
+												</view>
+											</view>
+										</view>
+									</view>
+								</view>
+								<!-- </view> -->
+							</view>
+						</van-tab>
+					</van-tabs>
+				</scroll-view>
+			</view>
+		</view>
+	</van-tree-select>
+	<van-toast id="van-toast" />
+</view>
